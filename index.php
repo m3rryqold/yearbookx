@@ -23,8 +23,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-<title>Upload, Insert, Update, Delete an Image using PHP MySQL - Coding Cage</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta charset="utf-8">
+    <title>'16'17 Yearbook</title>
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="<?php //echo $ld; ?>favicon.ico" />
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">
 </head>
@@ -34,7 +37,7 @@
 <div class="container">
 
 	<div class="page-header">
-    	<h1 class="h2">all members. / <a class="btn btn-default" href="addnew.php"> <span class="glyphicon glyphicon-plus"></span> &nbsp; add new </a></h1> 
+    	<h1 class="h2">all members. / <a class="btn btn-default" href="addnew.php"> <span class="glyphicon glyphicon-plus"></span> &nbsp; add new </a>&nbsp; &nbsp; &nbsp;<?php if($user->is_logged_in()){ ?><a class="btn btn-warning" href="logout.php">logout </a> <?php }?></h1> 
     </div>
     
 <br />
@@ -57,7 +60,7 @@
 				<p class="page-header">
 				<span>
 				<a class="btn btn-info" href="editform.php?edit_id=<?php echo $row['userID']; ?>" title="click for edit" onclick="return confirm('sure to edit ?')"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
-				<a class="btn btn-danger" href="?delete_id=<?php echo $row['userID']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
+				<?php if($user->is_logged_in()){ ?><a class="btn btn-danger" href="?delete_id=<?php echo $row['userID']; ?>" title="click for delete" onclick="return confirm('sure to delete ?')"><span class="glyphicon glyphicon-remove-circle"></span> Delete</a><?php }?>
 				</span>
 				</p>
 			</div>

@@ -4,6 +4,9 @@
 	
 	require_once 'dbconfig.php';
 	
+    //if not logged in redirect to login page
+    if(!$user->is_logged_in()){ header('Location: login.php'); }
+
 	if(isset($_GET['edit_id']) && !empty($_GET['edit_id']))
 	{
 		$id = $_GET['edit_id'];
@@ -93,7 +96,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Upload, Insert, Update, Delete an Image using PHP MySQL - Coding Cage</title>
+<title>'16'17 Yearbook</title>
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="<?php //echo $ld; ?>favicon.ico" />
 
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
@@ -114,7 +119,7 @@
 
 
 	<div class="page-header">
-    	<h1 class="h2">update profile. <a class="btn btn-default" href="index.php"> all members </a></h1>
+    	<h1 class="h2">update profile. <a class="btn btn-default" href="index.php"> all members </a> &nbsp;&nbsp;&nbsp; <a class="btn btn-warning" href="logout.php">logout </a></h1>
     </div>
 
 <div class="clearfix"></div>
