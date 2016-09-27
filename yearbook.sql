@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 26, 2016 at 04:06 PM
+-- Generation Time: Sep 27, 2016 at 04:50 PM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 7.0.6
 
@@ -19,6 +19,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `yearbook`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog_members`
+--
+
+CREATE TABLE `blog_members` (
+  `memberID` int(11) UNSIGNED NOT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blog_members`
+--
+
+INSERT INTO `blog_members` (`memberID`, `username`, `password`, `email`) VALUES
+(1, 'admin', '$2y$10$tFSEognC0a/6JqANsUN9Oeny.Qj8G8Grd7WPBm9zwP4V6zr6sdb76', 'lemygold@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -48,6 +68,12 @@ INSERT INTO `tbl_users` (`userID`, `userName`, `userProfession`, `userPic`) VALU
 --
 
 --
+-- Indexes for table `blog_members`
+--
+ALTER TABLE `blog_members`
+  ADD PRIMARY KEY (`memberID`);
+
+--
 -- Indexes for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
@@ -57,6 +83,11 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for dumped tables
 --
 
+--
+-- AUTO_INCREMENT for table `blog_members`
+--
+ALTER TABLE `blog_members`
+  MODIFY `memberID` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_users`
 --
